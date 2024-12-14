@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd , showAdd }) => {
     return (
-        <header className='flex items-center justify-between py-5 px-10'>
+        <header className='flex items-center justify-between pt-10 '>
             <h1 className='text-4xl font-bold text-zinc-800'>{title}</h1>
-            <Button/>
+            <Button onAdd={onAdd} showAdd={showAdd} text={showAdd ? 'Close' : 'Add'}/>
             
         </header>
     )
@@ -17,6 +17,8 @@ Header.defaultProps = {
 
 Header.propTypes = {
     title: PropTypes.string.isRequired,
+    onAdd : PropTypes.func ,
+    showAdd: PropTypes.boolean ,
 }
 
 export default Header

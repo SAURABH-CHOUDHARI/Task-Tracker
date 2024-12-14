@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"
 import Task from "./Task"
-const Tasks = ({ tasks, onDelete }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
 
     return (
         <>
-        <div className="px-10 py-5">
+        <div className=" py-5">
         {tasks.map((task, idx) =>(
             
-            <Task key={idx} task={task.text} day={task.day} remainder={task.remainder} onDelete={onDelete}
+            <Task key={idx} task={task} onDelete={onDelete} onToggle={onToggle}
             ></Task>
         ))}
         </div>
@@ -18,6 +18,7 @@ const Tasks = ({ tasks, onDelete }) => {
 Tasks.propTypes = {
     tasks: PropTypes.array ,
     onDelete : PropTypes.func,
+    onToggle : PropTypes.func,
 }
 
 

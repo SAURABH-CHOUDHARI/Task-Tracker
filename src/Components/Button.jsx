@@ -1,20 +1,23 @@
 import PropTypes from 'prop-types'
 
-const Button = ({label}) => {
+const Button = ({text ,onAdd , showAdd }) => {
     return (
         <button 
-        className='bg-green-700 py-2 px-8 rounded-xl shadow-sm active:scale-95 border-none text-xl text-white font-medium'
-        >{label}
+        className={` ${showAdd ? 'bg-red-600' : 'bg-green-700' } py-2 px-8 rounded-xl shadow-sm active:scale-95 border-none text-xl text-white font-medium`}
+        onClick={onAdd}
+        >{text}
         </button>
     )
 }
 
 Button.defaultProps = {
-    label: 'Add',
+    text: 'Add',
 }
 
 Button.propTypes = {
-    label: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    onAdd : PropTypes.func,
+    showAdd : PropTypes.boolean,
 }
 
 export default Button
