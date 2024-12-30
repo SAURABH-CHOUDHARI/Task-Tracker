@@ -31,7 +31,7 @@ const AddTask = ( { onAdd } ) => {
             </div>
             <div className="flex flex-col">
                 <label htmlFor="time">Day and Time :</label>
-                <input type="text" id='time' placeholder="Add Day and Time" className="border-2 border-black py-2 px-2 "
+                <input type="datetime-local" id='time' placeholder="Add Day and Time" className="border-2 border-black py-2 px-2 "
                 value={day} onChange={(e) => setDay(e.target.value)}
                 />
             </div>
